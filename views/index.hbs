@@ -1,0 +1,87 @@
+
+<div id="container">
+
+
+
+                <div id="app" class="container">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-1 col-md-1 content-centers"></div>
+                       <div class="card">
+                        <div class="card-header">
+                            <h2 id="header-table" class="card-title text-center">SISTEMA DE ALARMAS EN LINEA.</h2>
+                        </div>
+                                <div class="card-block">
+                                    <table class="table table-striped">
+                                        <div class="row">
+                                            <tr>
+                                                <div class="col-6 col-sm-6 col-md-6">   <th>Monitor </th> </div>
+                                                
+                                            </tr>
+                                                                <tr>
+                                                                    <div class="col-6 col-sm-6 col-md-6"> <td id='panel'></td> </div>
+                                                                    
+                                                              
+                                                                </tr>
+                                                            
+                                                    </div>
+                                    </table>
+                                </div>
+                            </div>
+                        <div class="col-12 col-sm-1 col-md-1"></div>
+                    </div>
+                </div>
+            
+
+</div>
+<div class="container">      
+    <div class="row">
+  
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            
+            <th>Fecha</th>
+            <th>Trama</th>
+        </tr>
+        </thead>
+        {{#each datos}}
+          <tr>
+           
+            <th>{{this.fecha}}</th>
+            <th>{{this.trama}}</th> 
+          </tr>          
+       {{/each}}   
+      </table>
+    </div>
+</div>
+
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  
+
+
+<script>
+
+console.log("Mensaje de pruebas");
+
+$(document).ready(function()
+ {
+  //   alert("Se a iniciado el socket cliente");
+     var panel = $("#panel");
+     panel.html("Inicio el programa");
+
+       
+      var socket = io("http://localhost:8000");
+      socket.on("seq-num", function(msg) 
+      {
+           panel.html(msg);
+           console.log(msg);
+      });
+    
+    
+ }
+ );
+
+
+</script>

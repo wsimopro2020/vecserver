@@ -1,0 +1,100 @@
+<div class="container">
+        <section  id ="scontenido" class=" row-main content-center">
+
+        <article class="row">
+                <div id="tabs" class="row content-center">
+                    <ul class="col">
+                        <div class="col-xs-12 col-sm-12  col-md-2 col-lg-2"></div>
+                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4" ><a href="#tabs-1" class= "col-xs-12  text-center ">ESP32-1</a></li>
+                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4"><a href="#tabs-2" class= "col-xs-12  text-center "> ESP32-2</a></li>
+                        
+                        <div class="col-xs-12 col-sm-12  col-md-2 col-lg-2"></div>
+                    </ul>
+                <div class ="row">
+                    <div id="tabs-1">
+                        <div id="app" class="container">
+
+                            <div class="row">
+                                <div class="col-12 col-sm-1 col-md-1 content-centers"></div>
+                               <div class="card">
+                                <div class="card-header">
+                                    <h2  id= "header-table" class="card-title text-center">ESP32-1</h2>
+                                </div>
+
+                                        <div class="card-block">
+                                            <table class="table table-striped">
+                                                <div class="row">
+                                                    <tr>
+                                                        <div class="col-6 col-sm-6 col-md-6">   <th>SALIDA 1 </th> </div>
+                                                        <div class="col-6 col-sm-6 col-md-6">   <th>SALIDA 2</th> </div>
+                                                    </tr>
+                                                                        <tr>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='1'> </td> </div>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='2'> </td> </div>
+                                                                        <tr>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 3</th>  </div>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 4 </th></div>
+                                                                        </tr>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='3'> </td></div>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='4'> </td>  </div>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 5</th>  </div>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 6 </th></div>
+                                                                        </tr>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='5'> </td></div>
+                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='6'> </td>  </div>
+                                                                        </tr>
+                                                            </div>
+                                            </table>
+                                        </div>
+                                    </div>
+                                <div class="col-12 col-sm-1 col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+              <div id="tabs-2">
+                <div id="app" class="container">
+
+                    <div class="row">
+                     <div class="container">      
+    <div class="row">
+  
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            
+            <th>Fecha</th>
+            <th>Trama</th>
+        </tr>
+        </thead>
+        {{#each datos}}
+          <tr>
+           
+            <th>{{this.fecha}}</th>
+            <th>{{this.trama}}</th> 
+          </tr>          
+       {{/each}}   
+      </table>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+  
+
+            </div>
+        </div>
+        </div>
+
+
+</article>
+
+        </section>
+   </div>
+
+
+    <footer><div class="container"><h6 class="text-right">VISION ELECTRONIC</h6></div></footer>
+
+

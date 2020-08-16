@@ -1,0 +1,21 @@
+<div class="container">      
+    <div class="row">
+  
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            
+            <th>Fecha</th>
+            <th>Trama</th>
+        </tr>
+        </thead>
+        {{#each datos}}
+          <tr>
+           
+            <th>{{this.fecha}}</th>
+            <th>{{this.trama}}</th> 
+          </tr>          
+       {{/each}}   
+      </table>
+    </div>
+</div>
