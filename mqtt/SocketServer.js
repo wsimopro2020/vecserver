@@ -4,7 +4,7 @@
 
 
 var mqtt = require('mqtt');
-var client= mqtt.connect("mqtt://localhost:1883");
+var client= mqtt.connect("'ws://vecserver.herokuapp.com'");
 var topic="ESP32/COMANDOS";
 var bufferComandos = Buffer.alloc(3); 
 

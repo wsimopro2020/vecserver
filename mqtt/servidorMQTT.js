@@ -4,57 +4,25 @@ var mosca=require("mosca");
 var settings ={port :1883 }
 
 var broker = new mosca.Server(settings);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var topic4 ="ESP32/SALIDAS";
 
 var socketServer = require("./SocketServer");
-
-
-
-
-
-
-
-
 
 broker.on("ready",()=>
 {
   console.log("\n------------------broker is ready!----------------\n");
   console.log("--------iniciando cliente mqtt-----------------\n");
   var mqtt = require('mqtt');
-  var client= mqtt.connect("mqtt://localhost:1883");
+  var client= mqtt.connect("ws://vecserver.herokuapp.com");
   console.log("iniciando...\n");
   var direccion;
 client.on("message",(topic,message)=>
 {
-   // message = message.toString();
-  
     console.log("--mensaje recibido de mqtt-- \n"); 
     if(topic =="ESP32/DIRECCION")
     {
-
        direccion= message.readInt16LE(0);
         socketServer.emit('direccion', {msg: direccion});
-  
-    
     }
     else
     {
@@ -66,10 +34,9 @@ client.on("message",(topic,message)=>
       for(var  i=0; i< (message.length -1) ; i=i+2)
       {
         var elemento= message.readInt16LE(i);
-      //  console.log((i/2)+1,")",message.readUInt16LE(i));
+      
        out=out+" <tr> <th>"+"direccion: "+j   +"</th><th>"+elemento   +"</th></tr>";
-     // console.log(out);
-      //console.log((i/2)+1,")",elemento);
+ 
       j++;
     }
     socketServer.emit('tramas', {msg: out});

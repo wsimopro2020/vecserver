@@ -1,5 +1,5 @@
 var mqtt = require('mqtt');
-var client= mqtt.connect("mqtt://localhost:1883");
+var client= mqtt.connect("mqtt://vecserver.herokuapp.com/1883");
 var topic ='esp32/output';
 var topic2 ="/topic/qos0";
 var mensaje="PUBLICADO DESDE UN PC ";
@@ -56,8 +56,8 @@ client.on("connect",()=>{
          //   client.publish(topic,comando,6);
          //   client.publish(topic2,"mensajes enviados");
             console.log('Se envio comando correcto ',mensaje);
-      //    client.publish("ESP32/COMANDOS","se envio comando desde pc\n"); 
-    //      client.publish("ESP32/COMANDOS","se envio comando desde pc\n");
+        client.publish("ESP32/COMANDOS","se envio comando desde pc\n"); 
+        client.publish("ESP32/COMANDOS","se envio comando desde pc\n");
            
 
         contador ++;
