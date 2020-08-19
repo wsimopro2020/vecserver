@@ -5,8 +5,8 @@
                 <div id="tabs" class="row content-center">
                     <ul class="col">
                         <div class="col-xs-12 col-sm-12  col-md-2 col-lg-2"></div>
-                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4" ><a href="#tabs-1" class= "col-xs-12  text-center ">ESP32-1</a></li>
-                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4"><a href="#tabs-2" class= "col-xs-12  text-center "> ESP32-2</a></li>
+                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4" ><a href="#tabs-1" class= "col-xs-12  text-center ">COMANDOS MODBUS</a></li>
+                        <li class= "col-xs-12 col-sm-12  col-md-4 col-lg-4"><a href="#tabs-2" class= "col-xs-12  text-center "> ESP32</a></li>
                         
                         <div class="col-xs-12 col-sm-12  col-md-2 col-lg-2"></div>
                     </ul>
@@ -14,87 +14,141 @@
                     <div id="tabs-1">
                         <div id="app" class="container">
 
-                            <div class="row">
-                                <div class="col-12 col-sm-1 col-md-1 content-centers"></div>
-                               <div class="card">
-                                <div class="card-header">
-                                    <h2  id= "header-table" class="card-title text-center">ESP32-1</h2>
-                                </div>
 
-                                        <div class="card-block">
-                                            <table class="table table-striped">
-                                                <div class="row">
-                                                    <tr>
-                                                        <div class="col-6 col-sm-6 col-md-6">   <th>SALIDA 1 </th> </div>
-                                                        <div class="col-6 col-sm-6 col-md-6">   <th>SALIDA 2</th> </div>
-                                                    </tr>
-                                                                        <tr>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='1'> </td> </div>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='2'> </td> </div>
-                                                                        <tr>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 3</th>  </div>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 4 </th></div>
-                                                                        </tr>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='3'> </td></div>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='4'> </td>  </div>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 5</th>  </div>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <th>SALIDA 6 </th></div>
-                                                                        </tr>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='5'> </td></div>
-                                                                            <div class="col-6 col-sm-6 col-md-6"> <td id='6'> </td>  </div>
-                                                                        </tr>
-                                                            </div>
-                                            </table>
-                                        </div>
+
+
+
+
+
+
+
+                            <div class="card-body">
+				                <form   class="form-block"   id="formulario" >
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Funcion Modbus</label>
+                                        <input   type="number"   class="form-control" id="fm" aria-describedby="emailHelp" placeholder="Funcion Modbus">
+                                        <small id="emailHelp" class="form-text text-muted">read multiples register(0x03) .</small>
                                     </div>
-                                <div class="col-12 col-sm-1 col-md-1"></div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Direccion de inicio</label>
+                                        <input  type="number"  class="form-control" id="dm" placeholder="direccion de inicio ">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Cantidad de registros</label>
+                                        <input  type="number"  class="form-control" id="size" placeholder="cantidad de registros ">
+                                    </div>
+                                   
+                                    <button type="submit" class="btn btn-primary"   id="boton">Enviar comando</button>
+                                </form>	
+			               </div>
+                        </div>
+                    </div>
+                    <div id="tabs-2">
+                        <div id="app" class="container">
+
+                            <div class="row">
+                                <div class="container">      
+                                    <div class="row">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th id="dirccion">Direccion:</th>
+                                                    <th>Registros:</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="registros">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-              <div id="tabs-2">
-                <div id="app" class="container">
-
-                    <div class="row">
-                     <div class="container">      
-    <div class="row">
-  
-      <table class="table table-striped">
-        <thead>
-        <tr>
-            
-            <th>Fecha</th>
-            <th>Trama</th>
-        </tr>
-        </thead>
-        {{#each datos}}
-          <tr>
-           
-            <th>{{this.fecha}}</th>
-            <th>{{this.trama}}</th> 
-          </tr>          
-       {{/each}}   
-      </table>
-    </div>
-</div>
-                    </div>
                 </div>
-            </div>
-
-  
-
-            </div>
-        </div>
-        </div>
+                </div>
+</div>
 
 
-</article>
-
-        </section>
-   </div>
-
+        
 
     <footer><div class="container"><h6 class="text-right">VISION ELECTRONIC</h6></div></footer>
 
 
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+$(document).ready(function()
+ {   
+
+let registros = $("#registros");
+let direccion = $("#direccion");
+let contador=0;
+let simbolo = "#";
+let boton= $("#boton");
+let dir=$("#dm");
+let func =$("#fm");
+let cantidadreg=$("#size");
+$("#boton").click((event)=>
+{
+    event.preventDefault();
+     console.log("Se a presionado el boton -------------------------");
+      
+    
+    let direccion=parseInt(dir.val());
+        
+    let funcion=parseInt(func.val());
+    let cant = parseInt(cantidadreg.val());
+   
+    
+
+    var com =
+    {
+        funcion: funcion,
+        direccion: direccion,
+        size:cant
+    };
+    console.log(com);
+    var socket = io("http://localhost:8000");
+
+    socket.emit('comando', com);
+   // socket.close();
+
+});
+    
+           
+
+
+
+
+ var socket = io("http://localhost:8000");
+
+      socket.on("tramas", function(msg) 
+      {
+          console.log("recibi mensajes socket\n");
+          reload(msg.msg);
+      });
+
+socket.on("direccion", function(msg) 
+      {
+          console.log("recibi direccion modbus ",msg.msg);
+           direccion.html("Direccion: "+msg.msg);
+       //   reload(msg.msg);
+      });
+
+     function reload(msg)
+     {
+        console.log("comenzamos las pruebas frontend\n");
+        registros.html(msg);
+     }
+   
+
+
+
+
+   
+
+ });
+    
+
+
+</script

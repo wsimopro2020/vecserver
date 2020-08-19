@@ -1,3 +1,5 @@
+
+var MQTT = require("./mqtt/servidorMQTT");
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registersRouter = require("./routes/registers");
 
+//var MQTTclient = require("./mqtt/MQTTclient");
 var app = express();
 
 // view engine setup
